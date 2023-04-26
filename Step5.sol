@@ -13,12 +13,14 @@ contract DynamicNFT is ERC721, ERC721URIStorage, KeeperCompatibleInterface {
 
     using Counters for Counters.Counter;
     Counters.Counter public tokenIdCounter;
-    // Step 4: add a string array that stores all the metadata for each stage of the dynamic NFT. For this NFT we have three different states possible
+// Step 4: add a string array that stores all the metadata for each stage of the dynamic NFT. For this NFT we have three different states possible
     string[] IpfsUri = [
         "https://ipfs.io/ipfs/QmYaTsyxTDnrG4toc8721w62rL4ZBKXQTGj9c9Rpdrntou/seed.json",
         "https://ipfs.io/ipfs/QmYaTsyxTDnrG4toc8721w62rL4ZBKXQTGj9c9Rpdrntou/purple-sprout.json",
         "https://ipfs.io/ipfs/QmYaTsyxTDnrG4toc8721w62rL4ZBKXQTGj9c9Rpdrntou/purple-blooms.json"
     ]; 
+
+// Step 5: create a couple of variables to define the current time, and time since the NFT was last updated or checked
 
     uint256 lastTimeStamp;
     uint256 interval;
